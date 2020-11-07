@@ -4,9 +4,9 @@ import data_credit
 import data_invest
 import data_loans
 
-def getQuiz(difficulty=1):
+def getQuiz(category):
     #todo: return a quiz based on the difficulty
-    print("todo")
+    print("todo ")
     return
 
 def checkAnswer(quiz, answer):
