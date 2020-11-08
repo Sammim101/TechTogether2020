@@ -37,7 +37,7 @@ data = {
             "reference" : "http://online.wsj.com/public/resources/documents/FinLitQuizAnswsersv4.pdf"
         },
         {
-            "question" : "When you obtain a "line of credit" from a lender, you:", 
+            "question" : "When you obtain a 'line of credit' from a lender, you:", 
             "category" : "loans", 
             "choices":[
                 {"A" : "Are able to borrow any amount up to a maximum at your discretion. You pay interest only on the amount borrowed and have flexible repayment terms."},

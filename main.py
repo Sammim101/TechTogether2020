@@ -49,9 +49,4 @@ while asked < totalQs:
     asked += 1
     print()
 
-    # checks if there are questions left in this category
-    #if qRemaining > 0:
-        #remaining[randCat] = qRemaining - 1
-        #asked += 1
-
 UI.displayResult()

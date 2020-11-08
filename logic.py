@@ -1,3 +1,5 @@
+# Holds logical components of taking and using data from JSONs
+
 import random
 import copy
 import data
@@ -65,7 +67,7 @@ def checkAnswer(category, question, answer):
             if questionInfo["answer"] == answer:
                 accuracy = True
                 result_record[category] = result_record[category] + 0.2
-                result_record["balance"] = result_record["balance"] + 4
+                #result_record["balance"] = result_record["balance"] + 4
             else:
                 result_record["balance"] = result_record["balance"] - 4
             break
