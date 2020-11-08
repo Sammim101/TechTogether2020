@@ -17,19 +17,19 @@ def play():
     # print(""" You will see multiple choice questions printed on the console.  To respond, 
             #simply type in the letter of the correct answer (A, B, C, or D).""")
 
-    questionInfo = {}
-    #an example of credit questions
-    while True:
-        questionInfo = logic.getQuestionInfo("credit")
-        if questionInfo == {}:
-            break
-        else:
-            #display question
-            print("\n", questionInfo["question"])
+    # questionInfo = {}
+    # #an example of credit questions
+    # while True:
+    #     questionInfo = logic.getQuestionInfo("credit")
+    #     if questionInfo == {}:
+    #         break
+    #     else:
+    #         #display question
+    #         print("\n", questionInfo["question"])
 
-            #display all answer choice
-            for choice in questionInfo["choices"]:
-                print("\n", choice)
+    #         #display all answer choice
+    #         for choice in questionInfo["choices"]:
+    #             print("\n", choice)
 
 def displayResult():
     #todo 3: display the final game result"
@@ -44,6 +44,7 @@ def displayResult():
 # displays if the user was correct or incorrect and how much money they have
 def displayCorrection():
     if (True):
+    # Todo
     # if check answer is true:
         print("Correct!")
     # else:
@@ -53,3 +54,23 @@ def displayCorrection():
 
     print("Your total sum is now $") 
     # + new sum
+
+# displays a question and the answers from a specific category
+def displayQuestion(category):
+    questionInfo = getQuestionInfo(category)
+    if validQuestionsNode(questionInfo):
+        question = getQuestion(questionInfo)
+        print(question)
+        answers = getAnswers(questionInfo)
+        for answer in answers:
+                for key, value in answer.items():
+                    print("{}: {}".format(key, value))
+
+# prompts the user to input their answer and returns this
+def displayInput():
+    while (True):
+        answer = input("Enter your answer here: ")
+        if answer.lower() in [a, b, c, d]:
+            return answer
+        else:
+            print("Answer not valid.  Must be A, B, C, or D and only one letter.")
