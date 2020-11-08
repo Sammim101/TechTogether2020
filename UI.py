@@ -84,7 +84,7 @@ def displayInput():
             print("Answer not valid.  Must be A, B, C, or D and only one letter.")
 
 # Testing:
-testing = True
+testing = False
 if (testing):
     questionsNode = displayQuestion("credit")
     answer = displayInput()
