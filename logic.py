@@ -3,8 +3,16 @@ import copy
 import data
 from data import data_bill, data_budget, data_credit, data_invest, data_loans
 
+result_record = {
+    "budget" : 0, 
+    "bill" : 0,
+    "loans" : 0,
+    "credit" : 0,
+    "invest" : 0,
+    "balance" : 100
+}
 
-# data backup due to deletiion during the getQuestionInf()
+# data backup due to deletiion during the getQuestionInfo()
 data_budget_copy = copy.deepcopy(data_budget.data)
 data_bill_copy = copy.deepcopy(data_bill.data)
 data_loans_copy = copy.deepcopy(data_loans.data)
@@ -37,7 +45,6 @@ def getQuestionInfo(category):
 
     return random_question
 
-# 
 def checkAnswer(category, question, answer):
     accuracy = False
 
@@ -57,15 +64,16 @@ def checkAnswer(category, question, answer):
         if questionInfo["question"] == question:
             if questionInfo["answer"] == answer:
                 accuracy = True
-            
+                result_record[category] = result_record[category] + 0.2
+                result_record["balance"] = result_record["balance"] + 4
+            else:
+                result_record["balance"] = result_record["balance"] - 4
             break
 
     return accuracy
 
 def getScore():
-    #todo: get the score 
-    print("todo")
-    return
+    return result_record
 
 # checks if a questions node is empty, true if isn't, false if is
 def validQuestionsNode(node):
@@ -92,9 +100,10 @@ def getReference(questionsNode):
 
 
 # Tests:
-testing = True
+testing = False
 #accuracy = checkAnswer("credit", "The best way to pay off credit card debt is: ", "C")
-#print (accuracy)
+#print (getScore())
+
 if (testing):
     for i in range(10):
         node = getQuestionInfo("credit")
