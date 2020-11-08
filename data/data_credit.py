@@ -6,10 +6,10 @@ data = {
             "question" : "The best way to pay off credit card debt is: ", 
             "category" : "credit", 
             "choices":[
-                {"A" : "To consistently pay part of the amount owed every month"},
-                {"B" : "To not pay every month but pay lump sum using my bonus at the end of the year"},
-                {"C" : "To pay the full amount owed for that month"},
-                {"D" : "To take up a personal bank loan to pay the credit card debt in full"}
+                {"A" : "To consistently pay part of the amount owed every month."},
+                {"B" : "To not pay every month but pay lump sum using my bonus at the end of the year."},
+                {"C" : "To pay the full amount owed for that month."},
+                {"D" : "To take up a personal bank loan to pay the credit card debt in full."}
             ],
             "answer" : "C",
             "reference" : "https://www.proprofs.com/quiz-school/story.php?title=financial-literacy-quiz"
@@ -42,8 +42,8 @@ data = {
             "question" : "A pre-paid credit card is:", 
             "category" : "credit", 
             "choices":[
-                {"A" : "Connected to your bank account"},
-                {"B" : "Unconnected to your banking account"},
+                {"A" : "Connected to your bank account."},
+                {"B" : "Unconnected to your banking account."},
             ],
             "answer" : "B",
             "reference" : "https://www.bankofamerica.com/credit-cards/credit-card-security-faq/"
@@ -52,7 +52,7 @@ data = {
             "question" : "One difference between a debit card and a credit card is that", 
             "category" : "credit", 
             "choices":[
-                {"A" : "Debit cards can only be used for large transactions"},
+                {"A" : "Debit cards can only be used for large transactions."},
                 {"B" : "Debit cards generate unsecured debt."},
                 {"C" : "Debit cards provide better consumer protection."},
                 {"D" : "Payments made with a debit card are immediately deducted from your bank account."},
