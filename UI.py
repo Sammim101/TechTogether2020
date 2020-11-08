@@ -34,13 +34,22 @@ def play():
 # Displays the final game result
 def displayResult():
     #todo 3: display the final game result"
-    print("Congratulations, you have completed the exam!  You have $") # + sum "remaining"
+    score = logic.getScore()
+    balance = score["balance"]
+    budget = str(score["budget"] * 100.0)
+    bill = str(score["bill"] * 100.0)
+    loans = str(score["loans"] * 100.0)
+    credit = str(score["credit"] * 100.0)
+    invest = str(score["invest"] * 100.0)
+    print("Congratulations, you have completed the exam!  You have $" + str(balance) + " left")
+    print("... you lost $" + str((100 - balance)))
     # or instead say how much money you lost (or both?)?
-    print("Here is your breakdown by category: ")
-    print("    Budgeting and setting financial goals: ") # + this sum
-    print("    Paying bills, taxes, and saving money: ") # + this sum
-    print("    Credit...............................: ") # + this sum
-    print("    Investing, 401(k)s, and stocks.......: ") # + this sum
+    print("Here is your breakdown percent correct by category: ")
+    print("    Budgeting and setting financial goals: " + budget + "%")
+    print("    Paying bills, taxes, and saving money: " + bill + "%") 
+    print("    Loans................................: " + loans + "%")
+    print("    Credit...............................: " + credit + "%")
+    print("    Investing, 401(k)s, and stocks.......: " + invest + "%") 
 
 # displays if the user was correct or incorrect and how much money they have
 # inputs the question node and user's inputted answer it is correcting for
@@ -58,7 +67,8 @@ def displayCorrection(questionsNode, answer):
         print("Incorrect (-$4).  The correct answer was " + correctAnswer) # + answer from json
         print("You can learn about this topic here: " + reference)
 
-    print("Your total sum is now $") 
+    score = logic.getScore()
+    print("Your total sum is now $" + str(score["balance"]))
     # + new sum
 
 # displays a question and the answers from a specific category and 
@@ -79,7 +89,7 @@ def displayInput():
     while (True):
         answer = input("Enter your answer here: ")
         if answer.lower() in ["a", "b", "c", "d"]:
-            return answer
+            return answer.upper()
         else:
             print("Answer not valid.  Must be A, B, C, or D and only one letter.")
 

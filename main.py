@@ -46,7 +46,7 @@ while asked < totalQs:
     if logic.validQuestionsNode(questionsNode) == True:
         userAnswer = UI.displayInput()
         UI.displayCorrection(questionsNode, userAnswer)
-        asked += 1
+    asked += 1
     print()
 
     # checks if there are questions left in this category
