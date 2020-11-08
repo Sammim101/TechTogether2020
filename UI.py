@@ -36,11 +36,11 @@ def displayResult():
     #todo 3: display the final game result"
     score = logic.getScore()
     balance = score["balance"]
-    budget = str(score["budget"] * 100.0)
-    bill = str(score["bill"] * 100.0)
-    loans = str(score["loans"] * 100.0)
-    credit = str(score["credit"] * 100.0)
-    invest = str(score["invest"] * 100.0)
+    budget = str(round(score["budget"] * 100.0, 1))
+    bill = str(round(score["bill"] * 100.0, 1))
+    loans = str(round(score["loans"] * 100.0, 1))
+    credit = str(round(score["credit"] * 100.0,1))
+    invest = str(round(score["invest"] * 100.0,1))
     print("Congratulations, you have completed the exam!  You have $" + str(balance) + " left")
     print("... you lost $" + str((100 - balance)))
     # or instead say how much money you lost (or both?)?

@@ -7,7 +7,7 @@ import logic
 # number of questions per category
 numQs = 5
 
-# number of categories
+# number of categoriesa
 numCats = 5
 
 # total number of questions (currently 25)
@@ -39,7 +39,6 @@ while asked < totalQs:
 
     # updates values so this upcoming question won't be asked again
     remaining[randCat] = qRemaining - 1
-    #asked += 1
 
     # asks question, takes in answer, and displays correction
     questionsNode = UI.displayQuestion(randCat)
