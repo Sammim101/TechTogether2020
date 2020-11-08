@@ -31,6 +31,7 @@ def play():
     #         for choice in questionInfo["choices"]:
     #             print("\n", choice)
 
+# Displays the final game result
 def displayResult():
     #todo 3: display the final game result"
     print("Congratulations, you have completed the exam!  You have $") # + sum "remaining"
@@ -42,20 +43,26 @@ def displayResult():
     print("    Investing, 401(k)s, and stocks.......: ") # + this sum
 
 # displays if the user was correct or incorrect and how much money they have
-def displayCorrection():
-    if (True):
-    # Todo
-    # if check answer is true:
+# inputs the question node and user's inputted answer it is correcting for
+def displayCorrection(questionsNode, answer):
+    # Check if answer is correct:
+    category = logic.getCategory(questionsNode)
+    question = logic.getQuestion(questionsNode)
+
+    if logic.checkAnswer(category, question, answer) == True:
         print("Correct!")
-    # else:
+    # Makes correction if incorrect
     else:
-        print("Incorrect (-$4).  The correct answer was .") # + answer from json
-        print("You can learn about this topic here: ") # + reference
+        correctAnswer = logic.getCorrectAnswer(questionsNode)
+        reference = logic.getReference(questionsNode)
+        print("Incorrect (-$4).  The correct answer was " + correctAnswer) # + answer from json
+        print("You can learn about this topic here: " + reference)
 
     print("Your total sum is now $") 
     # + new sum
 
-# displays a question and the answers from a specific category
+# displays a question and the answers from a specific category and 
+# returns the question node these came from
 def displayQuestion(category):
     questionInfo = logic.getQuestionInfo(category)
     if logic.validQuestionsNode(questionInfo):
@@ -65,6 +72,7 @@ def displayQuestion(category):
         for answer in answers:
                 for key, value in answer.items():
                     print("{}: {}".format(key, value))
+    return questionInfo
 
 # prompts the user to input their answer and returns this
 def displayInput():
@@ -78,5 +86,6 @@ def displayInput():
 # Testing:
 testing = True
 if (testing):
-    displayQuestion("credit")
-    displayInput()
+    questionsNode = displayQuestion("credit")
+    answer = displayInput()
+    displayCorrection(questionsNode, answer)

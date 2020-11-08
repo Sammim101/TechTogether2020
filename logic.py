@@ -87,17 +87,26 @@ def getQuestion(questionsNode):
     question = questionsNode["question"]
     return question
 
-# extracts the answers as a list from a questions node
+# extracts the answer choices as a list from a questions node
 def getAnswers(questionsNode):
     answers = []
     for answer in questionsNode["choices"]:
         answers.append(answer)
     return answers
 
+# extracts the reference as a string from a questions node
 def getReference(questionsNode):
     reference = questionsNode["reference"]
     return reference
 
+# extracts the category as a string from a questions node
+def getCategory(questionsNode):
+    category = questionsNode["category"]
+    return category
+
+def getCorrectAnswer(questionsNode):
+    correctAnswer = questionsNode["answer"]
+    return correctAnswer
 
 # Tests:
 testing = False
