@@ -14,7 +14,7 @@ def displayInstruction():
 
 def play():
     #todo 2: add code here to control how the user interacts / plays the game
-    # print(""" You will see multiple choice questions printed on the console.  To respond, 
+    print(""" You will see multiple choice questions printed on the console.  To respond, 
             #simply type in the letter of the correct answer (A, B, C, or D).""")
 
     # questionInfo = {}
@@ -57,11 +57,11 @@ def displayCorrection():
 
 # displays a question and the answers from a specific category
 def displayQuestion(category):
-    questionInfo = getQuestionInfo(category)
-    if validQuestionsNode(questionInfo):
-        question = getQuestion(questionInfo)
+    questionInfo = logic.getQuestionInfo(category)
+    if logic.validQuestionsNode(questionInfo):
+        question = logic.getQuestion(questionInfo)
         print(question)
-        answers = getAnswers(questionInfo)
+        answers = logic.getAnswers(questionInfo)
         for answer in answers:
                 for key, value in answer.items():
                     print("{}: {}".format(key, value))
@@ -70,7 +70,13 @@ def displayQuestion(category):
 def displayInput():
     while (True):
         answer = input("Enter your answer here: ")
-        if answer.lower() in [a, b, c, d]:
+        if answer.lower() in ["a", "b", "c", "d"]:
             return answer
         else:
             print("Answer not valid.  Must be A, B, C, or D and only one letter.")
+
+# Testing:
+testing = True
+if (testing):
+    displayQuestion("credit")
+    displayInput()
